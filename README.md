@@ -28,3 +28,21 @@ The system allows you to **add, display, update, delete, save, and load student 
 
 ## 📂 EXAMPLE RUN
 [![Menu](url)
+
+[![Choice1](url)
+
+[![Choice2](url)
+
+[![Choice3](url)
+
+[![Choice4](url)
+
+[![Choice5](url)
+
+[![Choice6](url)
+
+[![Choice7](url)
+
+
+
+✍️ Author: JANNELLE DINGAL
