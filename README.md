@@ -30,11 +30,11 @@ This is a Python program that manages student information using loops, lists, tu
 ## How to Run
 
 1. Make sure you have Python 3 installed.
-2. Place `student_information_system.py` and `students.csv` in the same directory.
+2. Place `student.py` and `students.csv` in the same directory.
 3. Run the program:
 
    ```bash
-   python student_information_system.py
+   python student.py
    ```
 
 4. Use the menu to add, display, update, delete, save, or load students.
