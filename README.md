@@ -46,7 +46,7 @@ This is a Python program that manages student information using loops, lists, tu
 
 ![RunPart1](https://github.com/user-attachments/assets/921cd68d-c850-4001-ab56-0f4437ca9c58)
 
-**Make sure to save in file or click 5 before choosing 2 or display**
+**After adding, make sure to save in file or type 5 before choosing 2 or display**
 
 ![RunPart2](https://github.com/user-attachments/assets/437c374c-79f7-4016-aac2-c5ae46694766)
 
