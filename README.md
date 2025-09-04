@@ -43,22 +43,16 @@ This is a Python program that manages student information using loops, lists, tu
 
 
 ## 📂 EXAMPLE RUN
-[![Menu](url)
 
-[![Choice1](url)
+![RunPart1](https://github.com/user-attachments/assets/921cd68d-c850-4001-ab56-0f4437ca9c58)
 
-[![Choice2](url)
+**Make sure to save in file or click 5 before choosing 2 or display**
 
-[![Choice3](url)
+![RunPart2](https://github.com/user-attachments/assets/437c374c-79f7-4016-aac2-c5ae46694766)
 
-[![Choice4](url)
+![RunPart3](https://github.com/user-attachments/assets/8539a4a0-a884-4d93-97c9-115a6cb8db7a)
 
-[![Choice5](url)
-
-[![Choice6](url)
-
-[![Choice7](url)
-
+![RunPart4](https://github.com/user-attachments/assets/cce6595b-fc8b-45eb-9d7e-3f2d11fcf376)
 
 
 ✍️ Author: JANNELLE DINGAL
