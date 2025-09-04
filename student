@@ -1,17 +1,13 @@
 import csv
 
-
 students = {}
 
-
 def add_student(student_id, name, age, grades=None):
-    """Add a new student. Demonstrates required, keyword, and default arguments."""
     if grades is None:
         grades = []
     if student_id in students:
         print("Student ID already exists.")
         return False
-    
     info_tuple = (student_id, name)
     students[student_id] = {
         'info': info_tuple,
@@ -22,7 +18,6 @@ def add_student(student_id, name, age, grades=None):
     return True
 
 def display_students(from_file=False, filename="students.csv"):
-    """Display all students. Demonstrates for loop, nested loop, matrix-like list."""
     data = students
     if from_file:
         data = load_from_file(filename, display_only=True)
@@ -36,19 +31,17 @@ def display_students(from_file=False, filename="students.csv"):
         age = details['age']
         grades = details['grades']
         print(f"ID: {info[0]}, Name: {info[1]}, Age: {age}, Grades: ", end="")
-        
         for i, g in enumerate(grades):
             print(g, end=", " if i < len(grades)-1 else "")
         print()
     print("-"*30)
-    
     print("Grade Matrix (student x grade):")
-    matrix = [details['grades'] for details in data.values()]
-    for row in matrix:
-        print(row)
+    for sid, details in data.items():
+        name = details['info'][1]
+        grades = details['grades']
+        print(f"{name}: {grades}")
 
 def update_student(student_id):
-    """Update student info. Demonstrates updating list elements and tuple operations."""
     if student_id not in students:
         print("Student not found.")
         return False
@@ -57,7 +50,6 @@ def update_student(student_id):
     name = input("Enter new name (leave blank to keep): ")
     if name:
         tup = details['info']
-       
         details['info'] = (tup[0], name)
     try:
         age = input("Enter new age (leave blank to keep): ")
@@ -65,7 +57,6 @@ def update_student(student_id):
             details['age'] = int(age)
     except ValueError:
         print("Invalid age input.")
-    # Update grades
     choice = input("Update grades? (y/n): ")
     if choice.lower() == 'y':
         grades = input("Enter new grades separated by spaces: ").split()
@@ -74,7 +65,6 @@ def update_student(student_id):
     return True
 
 def delete_student(student_id):
-    """Delete a student. Demonstrates deleting list/dict elements."""
     if student_id in students:
         del students[student_id]
         print("Student deleted.")
@@ -83,7 +73,6 @@ def delete_student(student_id):
     return False
 
 def save_to_file(filename="students.csv"):
-    """Save students to CSV file. Demonstrates file handling."""
     with open(filename, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(['ID', 'Name', 'Age', 'Grades'])
@@ -94,7 +83,6 @@ def save_to_file(filename="students.csv"):
     print(f"Data saved to {filename}.")
 
 def load_from_file(filename="students.csv", display_only=False):
-    """Load students from CSV file. Demonstrates file handling and pass by value/reference."""
     data = {}
     try:
         with open(filename, 'r') as f:
@@ -108,7 +96,7 @@ def load_from_file(filename="students.csv", display_only=False):
                 data[sid] = {'info': info_tuple, 'age': age, 'grades': grades}
         if not display_only:
             global students
-            students.clear()  
+            students.clear()
             students.update(data)
             print("Data loaded from file.")
         return data
@@ -117,44 +105,9 @@ def load_from_file(filename="students.csv", display_only=False):
         return {}
 
 def average_grades(grades):
-    """Lambda function for average."""
     avg = (lambda l: sum(l)/len(l) if l else 0)
     return avg(grades)
 
-def list_demo():
-    """Demonstrate list slicing, updating, deleting."""
-    sample = [10, 20, 30, 40, 50]
-    print("Original list:", sample)
-    print("Slice [1:4]:", sample[1:4])
-    sample[2] = 99
-    print("Updated:", sample)
-    del sample[0]
-    print("Deleted first element:", sample)
-
-def tuple_demo():
-    """Demonstrate tuple operations and built-ins."""
-    t = ("1001", "Alice")
-    print("Tuple:", t)
-    print("Length:", len(t))
-    print("Max:", max(t))
-    print("Min:", min(t))
-
-def dict_demo():
-    """Demonstrate dict keys, values, items."""
-    print("Student dict keys:", students.keys())
-    print("Student dict values:", students.values())
-    print("Student dict items:", students.items())
-
-def scope_demo():
-    """Demonstrate local vs global."""
-    x = "global"
-    def inner():
-        x = "local"
-        print("Inner x:", x)
-    inner()
-    print("Outer x:", x)
-
-# Main loop
 def main():
     load_from_file()
     while True:
@@ -175,7 +128,6 @@ def main():
                 continue
             choice = int(choice)
             if choice == 1:
-                # Add Student
                 sid = input("Enter student ID: ")
                 name = input("Enter name: ")
                 age = int(input("Enter age: "))
@@ -197,20 +149,13 @@ def main():
                 load_from_file()
             elif choice == 7:
                 print("Exiting program. Goodbye!")
-                break  
+                break
             else:
                 print("Invalid choice. Try again.")
-                continue  
-            
-            print("\n--- Python Feature Demonstrations ---")
-            list_demo()
-            tuple_demo()
-            dict_demo()
-            scope_demo()
-            print("-------------------------------------\n")
+                continue
         except Exception as e:
             print("Error:", e)
-            continue  
+            continue
 
 if __name__ == "__main__":
     main()
