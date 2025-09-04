@@ -1,7 +1,7 @@
 # Python_Student_Record
 IT5 Assignment 2
 
-# 📝 Student Information System (Python CLI)
+# 📝 Student Information System (Python)
 
 This is a simple **Student Information System** built with Python.  
 It demonstrates core Python programming concepts such as **functions, default/keyword arguments, tuples, lists, dictionaries, file handling, CSV operations, scope, and lambda functions**.  
@@ -26,4 +26,5 @@ The system allows you to **add, display, update, delete, save, and load student 
 
 ---
 
-## 📂 Project Structure
+## 📂 EXAMPLE RUN
+[![Menu](url)
